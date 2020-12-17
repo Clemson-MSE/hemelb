@@ -63,7 +63,7 @@ namespace hemelb
           void testWriteMesh()
           {
             std::ostringstream output;
-            writeMesh(output, *mesh, util::UnitConverter(1, 1, LatticePosition(0, 0, 0), 1000.0));
+            writeMesh(output, *mesh, util::UnitConverter(1, 1, LatticePosition(0, 0, 0), 1000.0, 0.0));
             std::istringstream input(output.str());
             std::shared_ptr<MeshData> other = readMesh(input);
             CPPUNIT_ASSERT(other->vertices.size() == mesh->vertices.size());

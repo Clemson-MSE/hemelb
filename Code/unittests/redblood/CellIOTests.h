@@ -39,7 +39,7 @@ namespace hemelb
         public:
           void setUp()
           {
-            converter.reset(new util::UnitConverter(0.5, 0.6, LatticePosition(1, 2, 3), 1000.0));
+            converter.reset(new util::UnitConverter(0.5, 0.6, LatticePosition(1, 2, 3), 1000.0, 0.0));
             // It seems TiXML might take care of deallocation
             auto const parent = new TiXmlElement("parent");
             doc.LinkEndChild(parent);
