@@ -436,8 +436,7 @@ namespace hemelb
                 indexInType++)
             {
               siteData.push_back(midDomainSiteData[collisionType][indexInType]);
-
-              wallNormalAtSite.push_back(midDomainWallNormals[collisionType][indexInType]);
+              wallNormalAtSite.emplace_back(midDomainWallNormals[collisionType][indexInType]);
               for (Direction direction = 1; direction < latticeInfo.GetNumVectors(); direction++)
               {
                 distanceToWall.push_back(midDomainWallDistance[collisionType][indexInType
@@ -458,7 +457,7 @@ namespace hemelb
                 indexInType++)
             {
               siteData.push_back(domainEdgeSiteData[collisionType][indexInType]);
-              wallNormalAtSite.push_back(domainEdgeWallNormals[collisionType][indexInType]);
+              wallNormalAtSite.emplace_back(domainEdgeWallNormals[collisionType][indexInType]);
 
               for (Direction direction = 1; direction < latticeInfo.GetNumVectors(); direction++)
               {
