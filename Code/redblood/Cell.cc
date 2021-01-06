@@ -169,13 +169,13 @@ namespace hemelb
       auto moduli = cell->moduli;
 
       {
-        std::vector<LatticeForceVector> forces(cell->GetNumberOfNodes(), 0.0);
+        std::vector<LatticeForceVector> forces(cell->GetNumberOfNodes(), LatticeForceVector::Zero());
         cell->facetBending(forces);
         push_back_point_data("bending", forces);
       }
 
       {
-        std::vector<LatticeForceVector> forces(cell->GetNumberOfNodes(), 0.0);
+        std::vector<LatticeForceVector> forces(cell->GetNumberOfNodes(), LatticeForceVector::Zero());
         volumeEnergy(cell->GetVertices(),
                      *cell->GetTemplateMesh().GetData(),
                      moduli.volume,
@@ -185,7 +185,7 @@ namespace hemelb
       }
 
       {
-        std::vector<LatticeForceVector> forces(cell->GetNumberOfNodes(), 0.0);
+        std::vector<LatticeForceVector> forces(cell->GetNumberOfNodes(), LatticeForceVector::Zero());
         surfaceEnergy(cell->GetVertices(),
                       *cell->GetTemplateMesh().GetData(),
                       moduli.surface,
@@ -195,7 +195,7 @@ namespace hemelb
       }
 
       {
-        std::vector<LatticeForceVector> forces(cell->GetNumberOfNodes(), 0.0);
+        std::vector<LatticeForceVector> forces(cell->GetNumberOfNodes(), LatticeForceVector::Zero());
         strainEnergy(cell->GetVertices(),
                      *cell->GetTemplateMesh().GetData(),
                      moduli.strain,
