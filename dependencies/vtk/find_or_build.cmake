@@ -5,16 +5,16 @@
 hemelb_dependency(vtk find)
 
 if (VTK_FOUND)
-  message("VTK >= 8.2 already installed, no need to download")
+  message("VTK >= 9.0 already installed, no need to download")
 else()
   message("VTK not installed, will build from source")
-  find_file(VTK_TARBALL VTK-8.2.0.tar.gz
+  find_file(VTK_TARBALL VTK-9.0.1.tar.gz
     DOC "Path to download VTK (can be url http://)"
     PATHS ${HEMELB_DEPENDENCIES_PATH}/distributions
     )
   if(NOT VTK_TARBALL)
     message("No VTK source found, will download.")
-    set(VTK_TARBALL https://www.vtk.org/files/release/8.2/VTK-8.2.0.tar.gz
+    set(VTK_TARBALL https://www.vtk.org/files/release/9.0/VTK-9.0.1.tar.gz
       CACHE STRING "Path to download VTK (can be local file://)" FORCE)
   endif()
 
